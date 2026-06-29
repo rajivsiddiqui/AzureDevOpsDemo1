@@ -32,8 +32,9 @@ steps:
 - task: AzureRmWebAppDeployment@5
   inputs:
     ConnectionType: 'AzureRM'
+    azureSubscription: 'azure-connection'
     appType: 'webAppLinux'
     WebAppName: 'devopssteps-webapp'
-    #packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war'
-    package: '$(Pipeline.Workspace)/warfile/*.war'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war'
+    DeploymentTypeLinux: 'oneDeploy'
     
